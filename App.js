@@ -21,7 +21,7 @@ const recipeBg = document.querySelector(".recipe");
 // api Keys
 const apiKey1 = "58b70ad75cfd44faaf2caaee62677046";
 const apiKey2 = "6e1a847748d1412181301d1365d90644";
-const apiKey3 = ""
+const apiKey3 = "2530ebb758e9458b97b8ea62b2f8a259";
 
 
 // Initial Meal Data 
@@ -60,7 +60,7 @@ async function mealColories() {
     else if (gender.value === "female" && activity.value === "active") {
         var calories = bmrFemale * 1.725;
     }
-    const url = `https://api.spoonacular.com/mealplanner/generate?apiKey=${apiKey1}&timeFrame=day&targetCalories=${calories}`;
+    const url = `https://api.spoonacular.com/mealplanner/generate?apiKey=${apiKey2}&timeFrame=day&targetCalories=${calories}`;
     const resp = await fetch(url);
     const respData = await resp.json();
     return respData;
@@ -72,7 +72,7 @@ async function mealData (data){
     equipment.innerHTML = " ";
     steps.innerHTML = " ";
     data.map(async (i)=>{
-        const mealUrl = `https://api.spoonacular.com/recipes/${i.id}/information?apiKey=${apiKey1}&includeNutrition=false`;
+        const mealUrl = `https://api.spoonacular.com/recipes/${i.id}/information?apiKey=${apiKey2}&includeNutrition=false`;
         const respMeal = await fetch(mealUrl);
         const res = await respMeal.json();
         load.style.display = "block"

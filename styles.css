@@ -128,7 +128,7 @@ button:active {
 
 .steps {
   padding: 20px;
-  margin: 30px;
+  margin: 0 30px;
 }
 .recipe {
   padding: 50px;
@@ -137,7 +137,7 @@ button:active {
   font-size: 20px;
 }
 .recipe h2 {
-  margin: 20px;
+  margin: 0 20px 20px 20px;
   color: var(--primary);
 }
 #load {
