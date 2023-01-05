@@ -235,6 +235,7 @@ li {
 
   input {
     width: 340px;
+    height: 50px;
     margin: 10px 10px 8px 20px;
   }
   .dish {
@@ -257,6 +258,7 @@ li {
     margin: 20px;
   }
   select {
+    height: 50px;
     margin: 10px 10px 8px 20px;
     width: 340px;
     text-align: center;
