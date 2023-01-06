@@ -22,11 +22,12 @@ const recipeBg = document.querySelector(".recipe");
 const apiKey1 = "58b70ad75cfd44faaf2caaee62677046";
 const apiKey2 = "6e1a847748d1412181301d1365d90644";
 const apiKey3 = "2530ebb758e9458b97b8ea62b2f8a259";
+const apiKey4 = "cb6cd6cead7440b4b9b1fda9c25b76c0";
 
 
 // Initial Meal Data 
 async function initialMeal() { 
-    const url = `https://api.spoonacular.com/mealplanner/generate?apiKey=${apiKey1}&timeFrame=day`
+    const url = `https://api.spoonacular.com/mealplanner/generate?apiKey=${apiKey3}&timeFrame=day`
     const api = await fetch(url);
     const resp = await api.json();
     return resp; //meal[2]
@@ -60,7 +61,7 @@ async function mealColories() {
     else if (gender.value === "female" && activity.value === "active") {
         var calories = bmrFemale * 1.725;
     }
-    const url = `https://api.spoonacular.com/mealplanner/generate?apiKey=${apiKey2}&timeFrame=day&targetCalories=${calories}`;
+    const url = `https://api.spoonacular.com/mealplanner/generate?apiKey=${apiKey4}&timeFrame=day&targetCalories=${calories}`;
     const resp = await fetch(url);
     const respData = await resp.json();
     return respData;
@@ -72,7 +73,7 @@ async function mealData (data){
     equipment.innerHTML = " ";
     steps.innerHTML = " ";
     data.map(async (i)=>{
-        const mealUrl = `https://api.spoonacular.com/recipes/${i.id}/information?apiKey=${apiKey2}&includeNutrition=false`;
+        const mealUrl = `https://api.spoonacular.com/recipes/${i.id}/information?apiKey=${apiKey3}&includeNutrition=false`;
         const respMeal = await fetch(mealUrl);
         const res = await respMeal.json();
         load.style.display = "block"
@@ -125,10 +126,10 @@ function generateHTML(results) {
             for(let i=0;i<apiEqipment.length;i++){
                 let apiEqipment2 = apiEqipment[i].equipment;
                 for(let k=0;k<apiEqipment2.length;k++){
-                let para = document.createElement("li");
-                let newPara = apiEqipment2[k].name;
-                para.innerHTML = newPara;
-                equipment.appendChild(para);
+                    let para = document.createElement("li");
+                    let newPara = apiEqipment2[k].name;
+                    para.innerHTML = newPara;
+                    equipment.appendChild(para);
             }
         }
         }
@@ -143,7 +144,7 @@ function generateHTML(results) {
             let para = document.createElement("li");
             let newPara = apiStep[i].step;
             para.innerHTML = newPara;
-            ol.appendChild(para)
+            ol.appendChild(para);
             steps.appendChild(ol);
         }
     }   
