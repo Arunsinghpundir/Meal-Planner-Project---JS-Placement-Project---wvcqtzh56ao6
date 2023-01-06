@@ -159,33 +159,3 @@ function generateHTML(results) {
     item.appendChild(getRecipeBtn);
     card.appendChild(item);
 }
-
-
-
-// //Dummy Api
-// async function initialMeal() {
-//     const url = "./api.js"
-//     const api = await fetch(url);
-//     const resp = await api.json();
-//     console.log("1", resp);
-//     return resp; // meal[2]
-// }
-// async function initialMealData (data){
-//     card.innerHTML = " ";
-//     data.map(async (i)=>{
-//         const mealUrl = "./636026.js";
-//         const respMeal = await fetch(mealUrl);
-//         const res = await respMeal.json();
-//         load.style.display = "block"
-//         setTimeout(() => {
-//             load.style.display = "None";
-//             generateHTML(res);
-
-//         }, 2000);
-//     })
-// }
-// async function generateInitialMeal(){
-//     const data =await initialMeal()
-//     await initialMealData(data.meals);
-// }
-
