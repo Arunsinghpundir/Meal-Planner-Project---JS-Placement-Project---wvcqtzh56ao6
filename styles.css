@@ -25,24 +25,50 @@ nav h1 {
 input {
   background-color: rgb(199, 194, 194);
   padding: 8px;
-  border-radius: 5px;
+  scale: 1.1;
+  border: none;
+  border-radius: 10px;
   text-align: center;
+  transition: 1s;
+  color: black;
 }
 
+input:hover {
+  border: 1px solid black;
+  background-color: rgb(187, 172, 172);
+  box-shadow: 0 0 8px 1.2px rgb(255, 255, 255);
+  scale: 1.18;
+}
 .input2,
 .input1 {
   display: flex;
   justify-content: space-evenly;
   justify-items: center;
 }
+input:focus {
+  box-shadow: 0 0 10px 1.2px rgb(255, 255, 255);
+}
 .input1 {
   margin: 40px;
 }
 select {
+  text-transform: capitalize;
+
   cursor: pointer;
-  background-color: rgb(199, 194, 194);
+  background-color: rgba(199, 194, 194, 0.575);
   padding: 8px 40px;
-  border-radius: 5px;
+  scale: 1.1;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  transition: 1s;
+  color: black;
+}
+
+select:hover {
+  border: 1px solid black;
+  background-color: rgb(187, 172, 172);
+  box-shadow: 0 0 8px 1.2px rgb(255, 255, 255);
 }
 
 /* select option {
